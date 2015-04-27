@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> Chat App </title>
+
+	</head>
+	<body>
+		<div class= "chat">
+			<input type = "text" class ="chat-name" placeholder= "Enter your name">
+			<button>Sign In</button>
+			<div class= "chat-messages"></div>
+			<textarea placeholder="Type your message"></textarea>
+			<button>Send</button>
+			<div class ="chat status">Status: <span>Idle</span></div>
+		</div>
+
+
+		<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+		<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+		<script>
+		var inp = document.getElementsByClassName("chat-name");
+  		var socket = io();
+  		$('button').click(function(){
+   		 socket.emit('name input', $(inp).value;
+   		// $('#m').val('');
+   		// return false;
+		  });
+		</script>
+
+	</body>
+<html>
