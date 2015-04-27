@@ -12,14 +12,17 @@ http.listen(3000, function(){
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log('A user is connecting.');
 
    socket.on('disconnect', function(){
-    console.log( 'disconnected');
+    console.log('A user has disconnected.');
   });
 
 	socket.on('name input', function(msg){
-   	 console.log(msg);
+		if (msg != ''){
+   	 console.log(msg + " has signed in.");
+   	}
+
   });
 
 });
